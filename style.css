@@ -7,27 +7,54 @@ html {
 }
 
 
-/* Header */
+
+/*
+Header
+*/
+
 
 
 .header {
+    display: block;
+}
+
+/* Displays header full width/height in viewport */
+.header--fullscreen {
+    height: 100vh;
+    width: 100vw;
+}
+
+/* Sets base font-size to allow em units, in relation to viewport width */
+.header__box {
     font-size: 6vw;
     text-align: center;
     display: block;
     width: 16em;
     height: 5.5em;
-    margin: 1em auto;
 }
 
+/* Centers header vertically & horizontally */
+.header__box--centered {
+    position: relative;
+    top: calc(50% - 3.5em);
+    margin: 0 auto;
+}
 
-.header__logo {
+/* Centers header horizonally */
+.header__box--x-centered{
+    margin: 0 auto;
+}
+
+/* Positions logo to left of container and adjusts width to align with header */
+.header__box__logo {
     position: absolute;
     width: 40%;
     left: .1%;
     top: 0;
 }
 
-.header__title {
+/* Overrides h1 styling, top padding & font-size fine tuned */
+.header__box__title {
     font-family: 'Open Sans', sans-serif;
     font-size: 1.6em;
     width: 100%;
@@ -37,7 +64,8 @@ html {
     font-weight: 600;
 }
 
-.header__subtitle {
+/* Overides p styling, width fine tuned to allow text-align right */
+.header__box__subtitle {
     font-family: 'Merriweather', serif;
     font-size: .5em;
     font-weight: 200;
@@ -48,9 +76,10 @@ html {
     color: #666;
 }
 
-@media screen and (min-width: 1000px) {
-  .header {
-    font-size: 4rem;
+/* Restrains font-size from increasing after 800px */
+@media screen and (min-width: 800px) {
+  .header__box {
+    font-size: 3rem;
   }
 }
 
